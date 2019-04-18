@@ -90,7 +90,7 @@ nav {
 	display: flex; 
 	flex-direction: column;
 	width: calc(100% - 560px);
-	padding-left: 5vw;
+	padding-right: 5vw;
 }
 .about h1 {
 	text-transform: uppercase;
