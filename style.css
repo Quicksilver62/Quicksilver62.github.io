@@ -284,7 +284,7 @@ nav {
 
 
 
-@media screen and (min-width: 1600px){
+@media screen and (max-width: 1600px){
 .about {
 	display: flex; 
 	flex-direction: column;
