@@ -259,10 +259,14 @@ nav {
 #users {
 	background-color:  #ea80fc;
 }
- .counts div {
+.counts div {
+	text-align: center;
+	position: relative;
+}
+ .inner_counts {
 	display: inline-block;
-	align-self: center;
-	justify-self: center; 
+	position: absolute;
+	top: 33%;
 }
 
 
