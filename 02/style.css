@@ -1,0 +1,352 @@
+
+/*-------------------------------RESET---------------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+input {
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+/*--------------------------------HEADER--------------------------------------------------*/
+
+header {
+	background: #1de9b6;
+	background-image: url("img/BG (1).png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	color: #fff;
+	display: flex; 
+	justify-content: center;
+}
+.wrapper {
+	width: 80%;
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+nav {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end; 
+}
+.logo {
+	display: flex;
+}
+.logo_text {
+	text-transform: uppercase;
+	font-size: 15px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400; 
+	line-height: 15px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+	margin-left: 10px;
+}
+
+.menu li, a {
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+	color: #fff;
+}
+.menu a:hover {
+	color:  rgba(6, 30, 55, 0.9);
+}
+.icon {
+	display: none;
+}
+.sign input {
+	width: 80px;
+	height: 25px;
+	font-weight: 400;
+	color: #fff;
+	font-size: 15px;
+	border: 1px solid #fff;
+	background-image: none; 
+    background: transparent;
+}
+.sign input:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	color:  rgba(6, 30, 55, 1);
+}
+
+.wrapper1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.about {
+	display: flex; 
+	flex-direction: column;
+	width: calc(100% - 560px);
+}
+.about h1 {
+	text-transform: uppercase;
+	font-size: 55px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 700;
+	line-height: 65px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+	margin-top: 0; 
+}
+.about p {
+	font-size: 18px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 35px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+	margin-top: -20px; 
+	margin-bottom: 2vw;
+}
+.buttons {
+	display: flex;
+	justify-content: flex-start;
+}
+.button_buy input {
+	border-radius: 5px;
+	background-color:  #061e37;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+	width: 150px;
+	height: 55px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 900;
+	border: 1px solid #061e37;
+}
+.button_buy input:hover {
+	background-color: rgba(6, 30, 55, 0.7);
+}
+.button_try input {
+	border-radius: 5px;
+	background-color:  #ffffff;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+	width: 160px;
+	height: 55px;
+	margin-left: 30px;
+	color: #061e37;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 900;
+	border: 1px solid #fff
+
+}
+.button_try input:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+ .video_wrapper {
+	width: 560px;
+	height: 315px;
+} 
+
+/*--------------------------------EASY AND USEFUL ---------------------------------------------*/
+
+.p1 {
+	color:  rgba(6, 30, 55, 0.9);
+	font-size: 45px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 600; 
+	text-align: center;
+	margin-top: 100px;
+}
+.p2 {
+	color:  #b0bec5;
+	font-size: 25px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 600;
+	text-align: center;
+	margin-top: 6px;
+}
+.p3 {
+	color:  #b0bec5;
+	font-size: 15px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 25px;/* Приближение из-за подстановки шрифтов */
+	text-align: center;
+	width: 600px;
+	margin: 20px auto;
+}
+
+.title {
+	width: 90%;
+	margin: 90px auto;
+	display: grid;
+	grid-template-areas: 
+		"left center right"
+		"button button button";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 12vw;
+	grid-row-gap: 78px;
+	text-align: center;
+}
+.title_item {
+	align-self: baseline;
+}
+.title_title {
+	color:  rgba(6, 30, 55, 0.9);
+	font-size: 20px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 600;
+	line-height: 25px;/* Приближение из-за подстановки шрифтов */
+	text-align: center;
+	margin-top: 20px;
+}
+.title_text {
+	color:  #78909c;
+	font-size: 15px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 20px;/* Приближение из-за подстановки шрифтов */
+	text-align: center;
+	margin-top: 40px;
+}
+#left {
+	grid-area: left;
+}
+#center {
+	grid-area: center;
+}
+#right {
+	grid-area: right;
+}
+.button_start {
+	grid-area: button;
+}
+.button_start input {
+	border-radius: 5px;
+	background-color:  #1de9b6;
+	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+	width: 150px;
+	height: 55px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 900;
+	border: 1px solid #1de9b6;
+	text-align: center;
+}
+.button_start input:hover {
+	background-color: rgba(29, 233, 182, 0.7);
+}
+
+/* ----------------------------------COUNTS-------------------------------------------------------  */
+
+.counts {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	height: 150px;
+	color: #fff;
+	font-size: 20px;/* Приближение из-за подстановки шрифтов */
+	font-weight: 700;
+	line-height: 25px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
+}
+.business {
+	background-color:  #80d8ff;
+}
+.downloads {
+	background-color:  #82b1ff;
+}
+.installs {
+	background-color:  #b388ff;
+}
+.users {
+	background-color:  #ea80fc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (min-width: 1600px){
+.about {
+	margin-right: 250px;
+}
+} */
+
+/* @media screen and (min-width: 1300px){
+.about {
+	margin-right: 10%;
+}
+}
+@media screen and (max-width: 1130px){
+.about {
+	margin-right: 50px;
+}
+.logo_img {
+	margin-left: 30px;
+}
+.butt input {
+	margin-right: 30px;
+}
+.video_wrapper {
+	margin-right: 30px;
+}
+.about {
+	margin-left: 30px;
+}
+}
+@media screen and (max-width: 1010px){
+.wrapper {
+	flex-direction: column;
+	align-items: center;
+}
+.about h1 {
+	text-align: center;
+}
+.about p {
+	text-align: center;
+}
+.buttons {
+	justify-content: center;
+}
+.video_wrapper {
+	margin-top: 50px;
+}
+
+
+@media screen and (max-width: 1010px){
+	.topnav a{
+		display: none;
+	}
+	.topnav a.icon{
+		float: right;
+		margin-top: -17px;
+		display: block;
+		color: #fff;
+		font-size: 25px;
+	}
+	nav{
+		width: 100%;
+	}
+	.topnav.responsive{
+		position: relative;
+		top: 50px;
+		left: -200px;
+	}
+	header .topnav.responsive{
+		height: 340px;
+	}
+	.topnav.responsive a.icon{
+		position: absolute;
+		top: -50px;
+		right: -200px;
+	}
+	.topnav.responsive a{
+		float: none;
+		display: block;
+		text-align: left;
+	} */
