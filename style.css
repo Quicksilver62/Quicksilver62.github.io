@@ -245,6 +245,7 @@ nav {
 	font-size: 20px;/* Приближение из-за подстановки шрифтов */
 	font-weight: 700;
 	line-height: 25px;/* Приближение из-за подстановки шрифтов */
+	text-align: left;
 }
 #business {
 	background-color:  #80d8ff;
@@ -258,11 +259,9 @@ nav {
 #users {
 	background-color:  #ea80fc;
 }
-/* .counts div p {
+ .counts div p {
 	display: inline-block;
-	text-align: center;
-}*/
-
+}
 
 
 
