@@ -89,8 +89,8 @@ nav {
 .about {
 	display: flex; 
 	flex-direction: column;
-	width: calc(100% - 560px);
-	padding-right: 5vw;
+	width: calc(100% - 560px - 15vw);
+	margin-right: 15vw;
 }
 .about h1 {
 	text-transform: uppercase;
@@ -147,8 +147,13 @@ nav {
  .video_wrapper {
 	width: 560px;
 	height: 315px;
-} 
-
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); /*ios 7 border-radius-bug */
+	-webkit-transform: rotate(0.000001deg); /*mac os 10.6 safari 5 border-radius-bug */
+	-webkit-border-radius: 15px; 
+	-moz-border-radius: 15px;
+	border-radius: 15px; 
+	overflow: hidden; 
+}
 /*--------------------------------EASY AND USEFUL ---------------------------------------------*/
 
 .p1 {
