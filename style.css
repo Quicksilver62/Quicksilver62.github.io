@@ -261,6 +261,8 @@ nav {
 }
  .counts div p {
 	display: inline-block;
+	align-self: center;
+	justify-self: center; 
 }
 
 
