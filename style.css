@@ -245,7 +245,7 @@ nav {
 	font-size: 20px;/* Приближение из-за подстановки шрифтов */
 	font-weight: 700;
 	line-height: 25px;/* Приближение из-за подстановки шрифтов */
-	text-align: center;
+	margin: 0 auto;
 }
 .business {
 	background-color:  #80d8ff;
