@@ -77,7 +77,7 @@ nav {
     background: transparent;
 }
 .sign input:hover {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.6);
 	color:  rgba(6, 30, 55, 1);
 }
 
@@ -125,7 +125,7 @@ nav {
 	border: 1px solid #061e37;
 }
 .button_buy input:hover {
-	background-color: rgba(6, 30, 55, 0.7);
+	background-color: rgba(6, 30, 55, 0.6);
 }
 .button_try input {
 	border-radius: 5px;
@@ -142,7 +142,7 @@ nav {
 
 }
 .button_try input:hover {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.6);
 }
  .video_wrapper {
 	width: 560px;
@@ -232,7 +232,7 @@ nav {
 	text-align: center;
 }
 .button_start input:hover {
-	background-color: rgba(29, 233, 182, 0.7);
+	background-color: rgba(29, 233, 182, 0.6);
 }
 
 /* ----------------------------------COUNTS-------------------------------------------------------  */
