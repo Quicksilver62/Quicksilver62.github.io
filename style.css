@@ -245,21 +245,23 @@ nav {
 	font-size: 20px;/* Приближение из-за подстановки шрифтов */
 	font-weight: 700;
 	line-height: 25px;/* Приближение из-за подстановки шрифтов */
-	margin: 0 auto;
 }
-.business {
+#business {
 	background-color:  #80d8ff;
 }
-.downloads {
+#downloads {
 	background-color:  #82b1ff;
 }
-.installs {
+#installs {
 	background-color:  #b388ff;
 }
-.users {
+#users {
 	background-color:  #ea80fc;
 }
-
+.counts div p {
+	display: inline-block;
+	text-align: center;
+}
 
 
 
