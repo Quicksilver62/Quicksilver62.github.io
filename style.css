@@ -259,7 +259,7 @@ nav {
 #users {
 	background-color:  #ea80fc;
 }
- .counts div p {
+ .counts div {
 	display: inline-block;
 	align-self: center;
 	justify-self: center; 
