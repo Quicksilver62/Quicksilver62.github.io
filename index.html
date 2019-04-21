@@ -2,6 +2,13 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
+
+	<!-- Инструкция для IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Отображать страницу в масштабе 100% -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Dart Service Manager</title>
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
@@ -39,14 +46,14 @@
 					</div> 
 				</div> 
 				<div class="video_wrapper">
-					<div class="video_overlay">
+					<div id="overlay" class="video_overlay">
 						<div class="layout"></div>
 						<div class="butt watch">
-							<input type="button" value="&#61515;">
-							<p>watch the video</p>
+							<input id="watch" type="button" value="&#61515;">
+							<p id="wtv">watch the video</p>
 						</div>
 					</div>
-				 	<video width="100%" height="100%" controls="controls" src="video/imagine-dragons-natural.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video>
+				 	<video id="videoOn" width="100%" height="100%" controls="controls" src="video/imagine-dragons-natural.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video>
 				</div>
 			</div>
 		</div>
@@ -96,5 +103,25 @@
 			</div>
 		</div>
 	</div>
+	<div class="services"></div>
+	<footer>
+		<div class="wrapper">
+			<nav>
+				<div class="logo">
+					<div class="logo_img"><img src="img/Shape 1.png" alt=""></div>
+					<div class="logo_text"><p><b>dart<br>service manager</b></p></div>
+				</div>
+				<ul class="menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">Extension</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#" id="bmenu" class="icon">&#9776;</a></li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+	<script src="script.js"></script>
 </body>
 </html>
