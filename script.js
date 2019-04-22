@@ -15,3 +15,9 @@ function handler() {
 	video.style.display = "none";
 	layer.style.display = "flex";
 }
+
+var list = document.getElementsByClassName("drop_down")[0];
+list.onclick = function (e) {
+
+}
+

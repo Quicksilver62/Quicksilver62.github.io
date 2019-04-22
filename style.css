@@ -62,6 +62,7 @@ nav {
 	line-height: 15px;/* Приближение из-за подстановки шрифтов */
 	text-align: left;
 	margin-left: 10px;
+	color: #fff;
 }
 
 .menu li, a {
@@ -71,8 +72,10 @@ nav {
 	color: #fff;
 }
 .menu a:hover {
-	color:  rgba(6, 30, 55, 0.9);
 	font-weight: 600;
+}
+#header_menu a:hover{
+	color:  rgba(6, 30, 55, 0.9);
 }
 .icon {
 	display: none;
@@ -179,7 +182,6 @@ nav {
 .layout {
 	width: 559px;
 	height: 314px;
-/*	margin: -5px 0 0 -5px; */
 	background: #fff;
 	opacity: 0.9;
 /*	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15); */
@@ -330,12 +332,86 @@ nav {
 	top: 33%;
 }
 
+/*-----------------------------------SERVICES-----------------------------------------------------*/
+
+.services {
+	display: flex;
+	justify-content: center;
+	
+}
+.serv_wrapper {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 100px;
+}
+.serv_title {
+	width: 600px;
+}
+#serv_p3 {
+	margin-top: 30px;
+	margin-bottom: 28px;
+}
+.box {
+	width: 100%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.13);
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin-top: 20px;
+}
+.serv_outer {
+	display:flex;
+	justify-content: space-between;
+	margin: 20px;
+}
+.serv_elem {
+	display: flex;
+	margin-left: 5px;
+}
+.serv_elem p {
+	margin-left: 24px;
+	/* Style for "Statistics" */
+	/*width: 82px;
+	height: 11px;*/
+	color: #061e37;
+	font-family: Raleway;
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.drop_down {
+	cursor: pointer;
+	margin-right: 5px;
+}
+.serv_inner {
+	margin: 0 25px 25px 25px;
+	display: none;
+}
+.serv_img {
+	display: inline-block;
+}
+.serv_inner p {
+	color: #061e37;
+	font-family: Raleway;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	/* Text style for "Lorem ipsu" */
+	letter-spacing: 0.45px;
+	text-align: justify;
+	margin-left: 25px;
+	margin-right: 8px;
+}
 /*----------------------------------FOOTER--------------------------------------------------------*/
 
 footer {
 	width: 100%;
 	height: 300px;
 	background-color: #061e37;
+	display: flex;
+	justify-content: center;
 }
 
 
