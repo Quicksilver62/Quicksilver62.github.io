@@ -1,3 +1,5 @@
+/*---------------------------LOAD VIDEO-----------------------------------------*/
+
 var elem = document.getElementById("watch");
 var video = document.getElementById("videoOn");
 var layer = document.getElementById("overlay");
@@ -16,6 +18,7 @@ function handler() {
 	layer.style.display = "flex";
 }
 
+/*---------------------------TOGGLE SERVICES-------------------------------------*/
 
 var panelItem = document.querySelectorAll('.drop_down'),
   active = document.getElementsByClassName('panel-active');
