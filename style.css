@@ -670,15 +670,9 @@ footer {
 		top: 50px;
 		left: -200px;
 	}
-	header {
-		height: 100%;
-	}
 	header .topnav.responsive{
 		height: 340px;
 	}
-	.p_header {
-		margin-bottom: 10vw;
-	} 
 	.p3 {
 		width: 90%;
 	}
@@ -698,7 +692,7 @@ footer {
 	}
 	.about {
 		width: 100%;
-		margin: 0;
+		margin: 100px 0 0 0;
 		align-items: center;
 	}
 	.about h1{
@@ -711,7 +705,7 @@ footer {
 		text-align: center;
 	}
 	.video_wrapper {
-		margin: 10vw 0;
+		margin: 100px 0 100px 0;
 	}
 	.title {
 	width: 80%;
@@ -728,11 +722,11 @@ footer {
 	}
 	.testimonials {
 		height: 100%;
-		padding: 100px 0 80px 0;
+		padding: 0 0 40px 0;
 	}
 	.p_testimonials {
 	text-align: center;
-	margin: 0 0 10vw 0;
+	margin: 0 0 5vw 0;
 	}
 	.chevrons_outer {
 		grid-template-columns: 0 1fr ;
@@ -753,18 +747,15 @@ footer {
 
 @media screen and (max-width: 700px){
 	header {
-		height: 100vh;
-		
+		height: 100vh;	
+	}
+	header .wrapper .wrapper1 .about {
+		margin: 0;
 	}
 	.counts {
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 	height: 300px;
-/*	color: #fff;
-	font-size: 20px;
-	font-weight: 700;
-	line-height: 25px;
-	text-align: left; */
 }
 	.inner_counts {
 		top: 17%;
@@ -805,3 +796,7 @@ footer {
 	}
 }
 
+@media screen and (max-height: 1000px) and (min-width: 700px) {
+	header {
+		height: 100%;
+	} 
