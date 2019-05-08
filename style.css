@@ -646,6 +646,9 @@ footer {
 	.testimonials_area {
 		width: 100%;
 	}
+	.avatars {
+		width: 90%;
+	}
  }
  
 @media screen and (max-width: 1200px){
@@ -672,6 +675,9 @@ footer {
 	}
 	header .topnav.responsive{
 		height: 340px;
+	}
+	.p_header {
+		margin-bottom: 10vw;
 	}
 	.p3 {
 		width: 90%;
@@ -743,9 +749,28 @@ footer {
 	}
 }
 
-@media screen and (max-width: 620px){
+@media screen and (max-width: 700px){
 	header {
 		padding-bottom: 10vw;
+	}
+	.counts {
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	height: 300px;
+/*	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 25px;
+	text-align: left; */
+}
+	.inner_counts {
+		top: 17%;
+	}
+	.serv_inner {
+		flex-direction: column;
+	}
+	.serv_inner p {
+		margin: 8px 0 0 0;
 	}
 	.avatars {
 		width: 90%px;
