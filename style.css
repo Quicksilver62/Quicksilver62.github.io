@@ -39,7 +39,7 @@ header {
 	justify-content: center;
 }
 .wrapper {
-	width: 90%;
+	width: 80%;
 	display: grid;
 	grid-template-rows: auto 1fr;
 }
@@ -438,12 +438,21 @@ nav {
 	text-align: left;
 	margin: 0 0 78px 0;
 }
-.testimonials_text_area {
+.testimonials_area {
 	width: 760px;
 	height: 564px;
 	display: grid;
-	grid-template-rows: 1fr 160px 70px 160px 1fr ; 
+	grid-template-rows: 1fr 390px 1fr ; 
+}
+.chevrons_outer {
+	display: grid;
+	grid-template-columns: 110px 1fr ;
+}
+.testimonials_outer {
+	display: grid;
 	grid-template-columns: 110px 1fr;
+	grid-template-rows: 1fr 1fr ; 
+	grid-row-gap: 70px;
 }
 .chevrons {
 	display: flex;
@@ -462,14 +471,18 @@ nav {
 }
 .testimonials_box {
 	width: calc(100% - 60px);
+	height: 100px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 	border-radius: 5px;
 	background-color: white;
 	padding: 30px;
 }
 .test_img {
-	display: inline-block;
 	align-self: center;
+}
+.test_img img {
+	background: #fff;
+	border-radius: 50%; 
 }
 .testimonials_name p {
 	color: #061e37;
@@ -477,7 +490,7 @@ nav {
 	font-weight: 700;
 }
 .testimonials_text {
-	height: calc(100% - 28px);
+	height: calc(100% - 25px); 
 	margin-top: 10px;
 	overflow-y: auto;
 }
@@ -487,7 +500,18 @@ nav {
 	font-style: italic;
 	line-height: 25px;
 }
-
+.slide {
+	display: none;
+}
+.showing {
+	display: block;
+}
+.up {
+	order: 1;
+}
+.down {
+	order: 2;
+}
 /*-----------------------------------TEAM---------------------------------------------------------*/
 
 .team {
@@ -499,6 +523,10 @@ nav {
 	width: 645px;
 	height: 100%;
 	margin: 0 auto;
+}
+#team_p3 {
+	margin-top: 30px;
+	margin-bottom: 28px;
 }
 .avatars {
 	margin: 0 auto;
@@ -612,9 +640,15 @@ footer {
 	width: calc(100% - 560px - 5vw);
 	margin-right: 5vw;
 }
-} 
-
-@media screen and (max-width: 1010px){
+}
+ 
+ @media screen and (max-width: 1300px){
+	.testimonials_area {
+		width: 100%;
+	}
+ }
+ 
+@media screen and (max-width: 1200px){
 	.topnav a{
 		display: none;
 	}
@@ -633,8 +667,14 @@ footer {
 		top: 50px;
 		left: -200px;
 	}
+	header {
+		height: 100%;
+	}
 	header .topnav.responsive{
 		height: 340px;
+	}
+	.p3 {
+		width: 90%;
 	}
 	.topnav.responsive a.icon{
 		position: absolute;
@@ -646,10 +686,74 @@ footer {
 		display: block;
 		text-align: left;
 	} 
+	.wrapper1 {
+		flex-direction: column;
+	}
+	.about {
+		width: 100%;
+		margin: 10vw 0 0;
+		align-items: center;
+	}
+	.about h1{
+		text-align: center;
+	}
+	.about h2{
+		text-align: center;
+	}
+	.p_header {
+		text-align: center;
+	}
+	.video_wrapper {
+		margin: 10vw 0;
+	}
+	.title {
+	margin: 5vw auto;
+	grid-template-areas: 
+		"left" 
+		"center" 
+		"right"
+		"button";
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-column-gap: 0;
+	grid-row-gap: 5vw;
+	margin-bottom: 100px;
+	}
+	.testimonials {
+		height: 100%;
+	}
+	.p_testimonials {
+	text-align: center;
+	margin: 0 0 5vw 0;
+	}
+	.chevrons_outer {
+		grid-template-columns: 0 1fr ;
+	}
+	.team_wrapper {
+		width: 90%;
+	}
+	.contact_wrapper {
+		width: 90%;
+	}
 }
 
-
-
+@media screen and (max-width: 900px){
+	.serv_wrapper {
+		width: 80%;
+	}
+		.avatars {
+		width: 90%px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-column-gap: 0;
+	}
+	.avatars div {
+		justify-self: center;
+	}
+	#team_left {
+		justify-self: center;
+	}
+}
 
 
 
