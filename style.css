@@ -105,7 +105,7 @@ nav {
 	display: flex; 
 	flex-direction: column;
 	width: calc(100% - 560px - 15vw);
-	margin-right: 15vw;
+	margin-right: 15vw; 
 }
 .about h1 {
 	text-transform: uppercase;
@@ -670,7 +670,7 @@ footer {
 		top: 50px;
 		left: -200px;
 	}
-	header {
+/*	header {
 		height: 100%;
 	}
 	header .topnav.responsive{
@@ -678,7 +678,7 @@ footer {
 	}
 	.p_header {
 		margin-bottom: 10vw;
-	}
+	} */
 	.p3 {
 		width: 90%;
 	}
@@ -694,10 +694,11 @@ footer {
 	} 
 	.wrapper1 {
 		flex-direction: column;
+		justify-content: center;
 	}
 	.about {
 		width: 100%;
-		margin: 10vw 0 0;
+		margin: 0;
 		align-items: center;
 	}
 	.about h1{
@@ -713,7 +714,8 @@ footer {
 		margin: 10vw 0;
 	}
 	.title {
-	margin: 5vw auto;
+	width: 80%;
+	margin: 5vw auto 100px auto;
 	grid-template-areas: 
 		"left" 
 		"center" 
@@ -723,14 +725,14 @@ footer {
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-column-gap: 0;
 	grid-row-gap: 5vw;
-	margin-bottom: 100px;
 	}
 	.testimonials {
 		height: 100%;
+		padding: 100px 0 80px 0;
 	}
 	.p_testimonials {
 	text-align: center;
-	margin: 0 0 5vw 0;
+	margin: 0 0 10vw 0;
 	}
 	.chevrons_outer {
 		grid-template-columns: 0 1fr ;
@@ -751,7 +753,8 @@ footer {
 
 @media screen and (max-width: 700px){
 	header {
-		padding-bottom: 10vw;
+		height: 100vh;
+		
 	}
 	.counts {
 	grid-template-columns: 1fr;
