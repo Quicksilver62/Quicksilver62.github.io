@@ -1,22 +1,22 @@
 
 /*---------------------------LOAD VIDEO-----------------------------------------*/
 
-var elem = document.getElementById("watch");
-var video = document.getElementById("videoOn");
-var layer = document.getElementById("overlay");
+var elem = document.getElementById('watch');
+var video = document.getElementById('videoOn');
+var layer = document.getElementById('overlay');
 
 elem.onclick = function myFunction() {
-	layer.style.display = "none";
+	layer.style.display = 'none';
 	video.autoplay = true;
 	video.load();
-/*	video.setAttribute("autoplay", "autoplay"); */
-	video.style.display = "block";
+/*	video.setAttribute('autoplay', 'autoplay'); */
+	video.style.display = 'block';
 } 
-video.addEventListener("ended", handler);
-video.addEventListener("OnEnded", handler);
+video.addEventListener('ended', handler);
+video.addEventListener('OnEnded', handler);
 function handler() {
-	video.style.display = "none";
-	layer.style.display = "flex";
+	video.style.display = 'none';
+	layer.style.display = 'flex';
 };
 
 /*---------------------------TOGGLE SERVICES-------------------------------------*/
@@ -112,3 +112,80 @@ function getUp() {
 function getDown() {
 	return Array.from(document.getElementsByClassName('down'));
 };
+
+/*----------------------------TEAM SLIDER------------------------------------*/
+
+var teamSlides = Array.from(document.getElementsByClassName('team_avatars'));
+var teamNames = Array.from(document.getElementsByClassName('team_name'));
+var teamText = Array.from(document.getElementsByClassName('team_text'));
+var left = 0; center =1; right = 2;
+
+teamSlides.forEach(function(item) {
+	item.addEventListener('click', function() {
+		if (this.classList.contains('team_right')) {
+			teamNextSlide();
+		}
+		else if (this.classList.contains('team_left')) {
+			teamPreviousSlide();
+		}
+	});
+});
+
+function teamNextSlide() {
+	
+	removeTeamClasses(left, center, right);
+	
+	if (right >= (teamSlides.length-1)) {	
+	right = 0;}
+	else { 
+	right++;};
+	if (center >= (teamSlides.length-1)) {
+	center = 0;}
+	else { 
+	center++;};
+	if (left >= (teamSlides.length-1)) {
+	left = 0;}
+	else { 
+	left++;};
+	
+	setTeamClasses(left, center, right);
+	
+};
+
+function teamPreviousSlide() {
+	
+	removeTeamClasses(left, center, right);
+	
+	if (left <=0) {	
+	left = teamSlides.length-1;}
+	else { 
+	left--;};
+	if (center <=0) {
+	center = teamSlides.length-1;} 
+	else { 
+	center--;};
+	if (right <=0) {
+	right = teamSlides.length-1;}
+	else { 
+	right--;};
+
+	setTeamClasses(left, center, right);
+		
+};
+
+function removeTeamClasses(teamLeft, teamCenter, teamRight) {
+	teamSlides[teamLeft].classList.remove('team_left');
+	teamSlides[teamCenter].classList.remove('team_center');
+	teamNames[teamCenter].classList.remove('team_show');
+	teamText[teamCenter].classList.remove('team_show');
+	teamSlides[teamRight].classList.remove('team_right');
+};
+
+ function setTeamClasses (teamLeft, teamCenter, teamRight) {
+	teamSlides[teamLeft].classList.add('team_left');
+	teamSlides[teamCenter].classList.add('team_center');
+	teamNames[teamCenter].classList.add('team_show');
+	teamText[teamCenter].classList.add('team_show');
+	teamSlides[teamRight].classList.add('team_right'); 
+ };
+
