@@ -485,6 +485,7 @@ nav {
 	border-radius: 50%; 
 }
 .testimonials_name p {
+	text-align: left;
 	color: #061e37;
 	font-size: 18px;
 	font-weight: 700;
@@ -495,6 +496,7 @@ nav {
 	overflow-y: auto;
 }
 .testimonials_text p {
+	text-align: left;
 	color: #78909c;
 	font-size: 15px;
 	font-style: italic;
@@ -539,12 +541,12 @@ nav {
 }
 .team_avatars {
 	border-radius: 50%;
-	background: grey;
 	display: none;
 }
 .team_avatars img {
 	width: 100%;
 	height: 100%;
+	border-radius: 50%;
 }
 .team_left {
 	width: 100px;
@@ -603,10 +605,86 @@ nav {
 	background-color: #fafafa;
 }
 .contact_wrapper {
-	width: 645px;
+	width: 600px;
 	height: 100%;
 	margin: 0 auto;
 }
+.contact_wrapper .p1 {
+	color: #061e37;
+	font-family: "Raleway - Semi Bold";
+	font-size: 45px;
+	font-weight: 400;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+#contact_p3 {
+	color: #061e37;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	margin-bottom: 50px;
+}
+.form_inputs{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 40px;
+	grid-row-gap: 20px;
+}
+.form_inputs input {
+	width: 280px;
+	height: 50px;
+	background: #fff;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #061e37;
+}
+.form_inputs input::placeholder {
+	color: #061e37;
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 18px 0 18px 20px;
+}
+textarea {
+	width: 100%;
+	height: 150px;
+	resize: none;
+	background: #fff;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #061e37;
+	margin: 20px 0 20px 0;
+}
+textarea::placeholder {
+	color: #061e37;
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 18px 0 18px 20px;
+}
+.send {
+	display: flex;
+	justify-content: space-between;
+}
+.check {
+	align-self: center;
+	inline-flex;
+}
+#checkbox label {
+	cursor: pointer;	
+	color: #061e37;
+	font-family: Raleway;
+	font-size: 15px;
+	font-weight: 500;
+	margin-right: 10px;
+}
+#button_send {
+	width: 130px;
+	height: 50px;
+	display: inline-flex;
+}
+
 /*----------------------------------FOOTER--------------------------------------------------------*/
 
 footer {
@@ -817,9 +895,9 @@ footer {
 	}
 }
 
-@media screen and (min-device-aspect-ratio: 568/320) {
+/*@media all and (orientation: landscape), screen and (max-width: 700px), screen and (min-width: 1200px) {
 	header {
 		height: 100%;
 		padding-bottom: 5vw;
 	} 
-} 
+} */
