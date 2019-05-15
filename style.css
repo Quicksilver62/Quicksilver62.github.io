@@ -369,7 +369,6 @@ nav {
 }
 .serv_elem p {
 	margin-left: 24px;
-	/* Style for "Statistics" */
 	color: #061e37;
 	font-family: Raleway;
 	font-size: 15px;
@@ -398,7 +397,6 @@ nav {
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 25px;
-	/* Text style for "Lorem ipsu" */
 	letter-spacing: 0.45px;
 	text-align: justify;
 	margin-left: 25px;
@@ -584,7 +582,6 @@ nav {
 .team_text {
 	height: 100px;
 	color: #90a4ae;
-/*	margin-bottom: 29px; */
 	display: none;
 }
 .team_social { 
@@ -632,22 +629,24 @@ nav {
 	grid-row-gap: 20px;
 }
 .form_inputs input {
-	width: 280px;
+	width: 260px;
 	height: 50px;
 	background: #fff;
 	outline: none;
 	border-radius: 5px;
 	border: 1px solid #061e37;
+	padding-left: 20px;
+	cursor: text;
 }
 .form_inputs input::placeholder {
 	color: #061e37;
 	font-family: Raleway;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 18px 0 18px 20px;
+	padding: 18px 0 18px 0;
 }
 textarea {
-	width: 100%;
+	width: calc(100% - 20px);
 	height: 150px;
 	resize: none;
 	background: #fff;
@@ -655,13 +654,14 @@ textarea {
 	border-radius: 5px;
 	border: 1px solid #061e37;
 	margin: 20px 0 20px 0;
+	padding: 18px 0 0 20px;
 }
 textarea::placeholder {
 	color: #061e37;
 	font-family: Raleway;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 18px 0 18px 20px;
+	padding: 0 0 18px 0;
 }
 .send {
 	display: flex;
@@ -671,13 +671,24 @@ textarea::placeholder {
 	align-self: center;
 	inline-flex;
 }
-#checkbox label {
+.check label {
 	cursor: pointer;	
 	color: #061e37;
 	font-family: Raleway;
 	font-size: 15px;
 	font-weight: 500;
-	margin-right: 10px;
+	text-indent: -15px;
+	margin: 0;
+	padding: 0;
+}
+.check label input {
+	margin: 0 9px 0 0;
+	padding: 0;
+	width: 16px;
+	height: 16px;
+	vertical-align: bottom;
+    position: relative; 
+    top: -2px;
 }
 #button_send {
 	width: 130px;
@@ -826,9 +837,6 @@ footer {
 	.chevrons_outer {
 		grid-template-columns: 0 1fr ;
 	}
-	.contact_wrapper {
-		width: 90%;
-	}
 }
 
 @media screen and (max-width: 900px){
@@ -883,6 +891,23 @@ footer {
 	.social {
 		flex-direction: column;
 	}
+	
+	.contact {
+	height: 100%;
+	padding-bottom: 50px;
+	}
+	.contact_wrapper {
+		width: 90%;
+	}
+	.form_inputs{
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr;
+		grid-column-gap: 0;
+		grid-row-gap: 20px;
+	}
+	.form_inputs input {
+		width: 100%;
+	}
 	footer {
 		height: 100%;
 		padding-bottom: 10vw;
@@ -895,9 +920,16 @@ footer {
 	}
 }
 
-/*@media all and (orientation: landscape), screen and (max-width: 700px), screen and (min-width: 1200px) {
+@media screen and (orientation: landscape) and (max-width: 1200px) {
 	header {
 		height: 100%;
 		padding-bottom: 5vw;
 	} 
-} */
+} 
+
+@media screen and (orientation: portrait) and (min-width: 700px) and (max-width: 1300px) and (max-device-aspect-ratio: 9/16) {
+	header {
+		height: 100%;
+		padding-bottom: 5vw;
+	} 
+}

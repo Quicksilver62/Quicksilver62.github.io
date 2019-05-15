@@ -25,6 +25,11 @@ var panelItem = document.querySelectorAll('.drop_down'),
   active = document.getElementsByClassName('panel-active');
 
 Array.from(panelItem).forEach(function(item, i, panelItem) {
+	item.addEventListener('onmousedown', function(e) {
+		preventDefault(e); 
+		stopPropagation(e);
+	return false;
+	}); 
 	item.addEventListener('click', function(e) {
 		if (active.length > 0 && active[0].childNodes[3] !== this) { //если есть активный элемент, и это не тот по которому кликнули
 		active[0].classList.remove('panel-active'); };// убрать класс panel-active
@@ -46,12 +51,24 @@ var boxes = Array.from(document.getElementsByClassName('testimonials_box'));
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
 
+next.onmousedown = function(ev) {
+		ev.preventDefault();
+		ev.stopPropagation();
+	return false;
+};
+previous.onmousedown = function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+	return false;
+};
  
 next.onclick = function() {
     nextSlide();
+	return false;
 };
 previous.onclick = function() {
     previousSlide();
+	return false;
 };
  
 function nextSlide() {
@@ -74,6 +91,7 @@ function nextSlide() {
 	currentSlideDown++;};
 	
     goToSlide(currentSlideDown, name1);
+	return false;
 };
 
 function previousSlide() {
@@ -96,6 +114,7 @@ function previousSlide() {
 	currentSlideUp--;};
 	
     goToSlide(currentSlideUp, name1);
+	return false;
 };
  
 function goToSlide(n, name) {
@@ -103,6 +122,7 @@ function goToSlide(n, name) {
 	imags[n].classList.add('showing');
 	boxes[n].classList.add(name);
 	boxes[n].classList.add('showing');
+	return false;
 }; 
 
 function getUp() {
@@ -119,8 +139,14 @@ var teamSlides = Array.from(document.getElementsByClassName('team_avatars'));
 var teamNames = Array.from(document.getElementsByClassName('team_name'));
 var teamText = Array.from(document.getElementsByClassName('team_text'));
 var left = 0; center =1; right = 2;
+var total = teamSlides.length-1;
 
 teamSlides.forEach(function(item) {
+	item.addEventListener('onmousedown', function() {
+		preventDefault();
+		stopPropagation();
+	return false;
+	}); 
 	item.addEventListener('click', function() {
 		if (this.classList.contains('team_right')) {
 			teamNextSlide();
@@ -135,15 +161,15 @@ function teamNextSlide() {
 	
 	removeTeamClasses(left, center, right);
 	
-	if (right >= (teamSlides.length-1)) {	
+	if (right >= (total)) {	
 	right = 0;}
 	else { 
 	right++;};
-	if (center >= (teamSlides.length-1)) {
+	if (center >= (total)) {
 	center = 0;}
 	else { 
 	center++;};
-	if (left >= (teamSlides.length-1)) {
+	if (left >= (total)) {
 	left = 0;}
 	else { 
 	left++;};
@@ -157,15 +183,15 @@ function teamPreviousSlide() {
 	removeTeamClasses(left, center, right);
 	
 	if (left <=0) {	
-	left = teamSlides.length-1;}
+	left = total;}
 	else { 
 	left--;};
 	if (center <=0) {
-	center = teamSlides.length-1;} 
+	center = total;} 
 	else { 
 	center--;};
 	if (right <=0) {
-	right = teamSlides.length-1;}
+	right = total;}
 	else { 
 	right--;};
 
