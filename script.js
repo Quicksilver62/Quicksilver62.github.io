@@ -1,11 +1,26 @@
 
+/*---------------------------OVERFLOW HEADER---------------------------------*/
+
+var header = document.getElementsByName('header');
+
+document.addEventListener("DOMContentLoaded", isOverflown(header));
+
+console.log(header.classList);
+
+function isOverflown(header) {
+    if (this.scrollHeight > this.clientHeight) {
+		this.style.height = '100%;';
+		this.style.padding = '0 0 50px 0;'; 
+	}
+	}
+
 /*---------------------------LOAD VIDEO-----------------------------------------*/
 
 var elem = document.getElementById('watch');
 var video = document.getElementById('videoOn');
 var layer = document.getElementById('overlay');
 
-elem.onclick = function myFunction() {
+elem.onclick = function() {
 	layer.style.display = 'none';
 	video.autoplay = true;
 	video.load();
@@ -51,9 +66,9 @@ var boxes = Array.from(document.getElementsByClassName('testimonials_box'));
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
 
-next.onmousedown = function(ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
+next.onmousedown = function(e) {
+		e.preventDefault();
+		e.stopPropagation();
 	return false;
 };
 previous.onmousedown = function(e) {
@@ -214,4 +229,14 @@ function removeTeamClasses(teamLeft, teamCenter, teamRight) {
 	teamText[teamCenter].classList.add('team_show');
 	teamSlides[teamRight].classList.add('team_right'); 
  };
+
+/*---------------------------BURGER MENU-------------------------------------*/
+
+var menu = document.getElementById('bmenu');
+
+menu.onclick = function() {
+//	console.log(this.previousElementSibling.classList);
+	this.previousElementSibling.classList.toggle('responsive');
+};
+
 
