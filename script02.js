@@ -1,45 +1,20 @@
 
-/*---------------------------OVERFLOW HEADER---------------------------------*/
-
-document.addEventListener('DOMContentLoaded', function() {
-	isOverflown();
-}, false);
-window.addEventListener('resize', function() {
-	isOverflown();
-}, false);
-
-function isOverflown() {
-	var header = document.getElementsByTagName('header');
-	var video_wrapper = document.getElementsByClassName('video_wrapper');
-	
-/*	console.log(header[0].scrollHeight);
-	console.log(header[0].clientHeight); */
-	
-	if (header[0].scrollHeight > header[0].clientHeight && window.matchMedia('(min-width: 700px)').matches) {
-		header[0].style.height = '100%';
-		video_wrapper[0].style.marginBottom = '50px';
-	} else {
-		header[0].style.height = '100vh';
-		video_wrapper[0].style.marginBottom = '0';
-	}
-
-} 
-
 /*---------------------------LOAD VIDEO-----------------------------------------*/
 
-var elem = document.getElementById('watch');
-var video = document.getElementById('videoOn');
-var layer = document.getElementById('overlay');
+var elem = document.querySelector('#watch');
+var video = document.querySelector('#videoOn');
+var layer = document.querySelector('#overlay');
 
-elem.onclick = function() {
+elem.addEventListener('click', function() {
 	layer.style.display = 'none';
 	video.autoplay = true;
 	video.load();
-/*	video.setAttribute('autoplay', 'autoplay'); */
 	video.style.display = 'block';
-} 
+});
+
 video.addEventListener('ended', handler);
 video.addEventListener('OnEnded', handler);
+
 function handler() {
 	video.style.display = 'none';
 	layer.style.display = 'flex';
@@ -59,70 +34,102 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 	item.addEventListener('click', function(e) {
 		
 		elem1 = this;
-		elem2 = active[0]
+		elem2 = active[0];
 		
-		function timeOut(el, callback) {
-				
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = 0;
-			var id = setInterval(frame, 1);
+		function timeOutUp(el, callback) {
+			
+			let height = parseInt(getComputedStyle(el).height, 10);
+			let pos = 0;
+			let id = setInterval(frame, 1);
 				
 			function frame() {
-				if (pos == height) {
+				if (pos >= height) {
 				clearInterval(id);
 				callback();
 				return false;
 				} else {
-					pos++; 
+					pos+=2; 
 					el.style.height = height-pos + 'px';
 				};
 			}
+			}
+		
+		function timeOutDown(el, callback) {
+			
+			let height0 = 0;
+			let height1 = calculateHeight(el);
+			let pos = 0;
+			let id = setInterval(frame, 1);
+				
+			function frame() {
+				if (pos >= height1) {
+				clearInterval(id);
+				callback();
+				return false;
+				} else {
+					pos+=2; 
+					el.style.height = height0+pos + 'px';
+				};
+			}
 		}
+		
+		function timeOutUpDown(el1Clck, el2Act, callback1, callback2) {
+			
+			let height0 = 0;
+			let height1 = calculateHeight(el1Clck);
+			let height2 = parseInt(getComputedStyle(el2Act).height, 10);
+			
+			let pos = 0;
+			let id = setInterval(frame, 1);
+				
+			function frame() {
+				if (pos >= Math.max(height1, height2)) {
+				clearInterval(id);
+				callback1();
+				callback2();
+				return false;
+				} else {
+					pos+=2;
+					if (height0+pos <= height1) {
+						el1Clck.style.height = height0+pos + 'px'; 
+					}
+					if (height2-pos >= 0) {
+						el2Act.style.height = height2-pos + 'px';
+					}
+				};
+			}
+		}
+		
 			
 		function finished() {
 			elem2.classList.remove('panel-active'); // убрать класс panel-active 
 		}
 		
-		if (active.length > 0 && elem2.childNodes[3] !== elem1) { 	//если есть активный элемент, и это не тот по которому кликнули
-			
-			timeOut(elem2.nextElementSibling, finished);
+		function toggle() {
+			elem1.parentNode.classList.toggle('panel-active');	// изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
 		}
 		
-		elem1.parentNode.classList.toggle('panel-active');	// изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
-		console.log(elem1.parentNode.nextElementSibling);
-		
-		if (elem1.parentNode.classList.contains('panel-active')) {
+		function calculateHeight(e) {
 			
-			let el = elem1.parentNode.nextElementSibling;			
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = height;
-			var id = setInterval(frame, 1);
-				
-			function frame() {
-				if (pos == 0) {
-				clearInterval(id);
-				return false;
-				} else {
-					pos--; 
-					el.style.height = height-pos + 'px';
-				};
+			if (window.innerWidth > 700) {
+				height = Math.max(e.firstElementChild.scrollHeight, e.lastElementChild.scrollHeight);	
 			}
+			else {
+				height = e.firstElementChild.scrollHeight + e.lastElementChild.scrollHeight;	
+			}
+			return height;
 		}
-		else {
-			
-			let el = elem1.parentNode.nextElementSibling;			
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = 0;
-			var id = setInterval(frame, 1);
+		
+		if (active.length > 0 && elem2.childNodes[3] !== elem1) { 	//если есть активный элемент, и это не тот по которому кликнули
+			timeOutUpDown(elem1.parentNode.nextElementSibling, elem2.nextElementSibling, finished, toggle);
+		}
 				
-			function frame() {
-				if (pos == height) {
-				clearInterval(id);
-				return false;
-				} else {
-					pos++; 
-					el.style.height = height-pos + 'px';
-				};
+		else {
+			if (elem1.parentNode.classList.contains('panel-active')) {
+				timeOutUp(elem1.parentNode.nextElementSibling, toggle);
+			}
+			else {
+				timeOutDown(elem1.parentNode.nextElementSibling, toggle);
 			}
 		}
 		
@@ -161,7 +168,7 @@ previous.onclick = function() {
     previousSlide();
 	return false;
 };
- 
+
 function nextSlide() {
 	var name1 = 'down';
 	var name2 = 'up';
@@ -266,7 +273,6 @@ function teamNextSlide() {
 	left++;};
 	
 	setTeamClasses(left, center, right);
-	
 };
 
 function teamPreviousSlide() {
@@ -286,8 +292,7 @@ function teamPreviousSlide() {
 	else { 
 	right--;};
 
-	setTeamClasses(left, center, right);
-		
+	setTeamClasses(left, center, right);	
 };
 
 function removeTeamClasses(teamLeft, teamCenter, teamRight) {

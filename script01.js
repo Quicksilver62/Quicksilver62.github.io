@@ -57,76 +57,29 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 	return false;
 	}); 
 	item.addEventListener('click', function(e) {
-		
-		elem1 = this;
-		elem2 = active[0]
-		
-		function timeOut(el, callback) {
-				
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = 0;
-			var id = setInterval(frame, 1);
-				
-			function frame() {
-				if (pos == height) {
-				clearInterval(id);
-				callback();
-				return false;
-				} else {
+		if (active.length > 0 && active[0].childNodes[3] !== this) { 	//если есть активный элемент, и это не тот по которому кликнули
+			console.log(active[0]);
+			(function() {
+				  height = parseInt(getComputedStyle(active[0].nextElementSibling).height, 10);
+				  console.log(height);
+				  var pos = 0;
+				  var id = setInterval(frame, 1);
+				  function frame() {
+					if (pos == height) {
+					  clearInterval(id);
+					  return false;
+					} else {
 					pos++; 
-					el.style.height = height-pos + 'px';
-				};
-			}
-		}
-			
-		function finished() {
-			elem2.classList.remove('panel-active'); // убрать класс panel-active 
-		}
-		
-		if (active.length > 0 && elem2.childNodes[3] !== elem1) { 	//если есть активный элемент, и это не тот по которому кликнули
-			
-			timeOut(elem2.nextElementSibling, finished);
-		}
-		
-		elem1.parentNode.classList.toggle('panel-active');	// изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
-		console.log(elem1.parentNode.nextElementSibling);
-		
-		if (elem1.parentNode.classList.contains('panel-active')) {
-			
-			let el = elem1.parentNode.nextElementSibling;			
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = height;
-			var id = setInterval(frame, 1);
-				
-			function frame() {
-				if (pos == 0) {
-				clearInterval(id);
-				return false;
-				} else {
-					pos--; 
-					el.style.height = height-pos + 'px';
-				};
-			}
-		}
-		else {
-			
-			let el = elem1.parentNode.nextElementSibling;			
-			height = parseInt(getComputedStyle(el).height, 10);
-			var pos = 0;
-			var id = setInterval(frame, 1);
-				
-			function frame() {
-				if (pos == height) {
-				clearInterval(id);
-				return false;
-				} else {
-					pos++; 
-					el.style.height = height-pos + 'px';
-				};
-			}
-		}
-		
-	});
+					active[0].nextElementSibling.style.height = height-pos + 'px';
+					console.log(pos);
+					console.log(active[0].nextElementSibling.style.height);
+    };
+  }
+		})();
+			active[0].classList.remove('panel-active');} // убрать класс panel-active 
+    // изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
+	this.parentNode.classList.toggle('panel-active');
+  });
 });
 
 /*------------------------TESTIMONIALS SLIDER------------------------------------ */
