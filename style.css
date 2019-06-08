@@ -26,6 +26,7 @@ li {
 	font-size: 15px;
 	font-weight: 900;
 }
+
 /*--------------------------------HEADER--------------------------------------------------*/
 
 header {
@@ -68,6 +69,7 @@ nav {
 	text-align: right;
 	display: flex;
 	align-self: flex-end;
+	justify-content: flex-end;
 } 
 
 .logo_text {
@@ -193,7 +195,6 @@ nav {
 	height: 100%;
 	background: #fff;
 	opacity: 0.9;
-/*	box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15); */
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px;
 	border-radius: 5px; 
@@ -226,6 +227,7 @@ nav {
 	font-size: 12px;
 	font-weight: 700;
 }
+
 /*--------------------------------EASY AND USEFUL ---------------------------------------------*/
 
 .p1 {
@@ -251,7 +253,6 @@ nav {
 	width: 555px;
 	margin: 20px auto;
 }
-
 .title {
 	width: 90%;
 	margin: 90px auto;
@@ -396,8 +397,6 @@ nav {
 }
 .serv_inner {
 	margin: 0 25px 0 25px;
-/*	margin: 0 25px 25px 25px;*/
-	/*display: none; */
 	height: 0;
 	overflow: hidden;
 	display: flex;
@@ -463,11 +462,18 @@ nav {
 	grid-template-columns: 110px 1fr ;
 }
 .testimonials_outer {
-	background: red;
+	overflow-y: hidden;
+}
+.testimonials_container {
 	display: grid;
 	grid-template-columns: 110px 1fr;
 	grid-template-rows: 1fr 1fr ; 
 	grid-row-gap: 70px;
+	position: relative;
+	-o-transition: all 0.5s ease-in-out;
+ 	-moz-transition: all 0.5s ease-in-out;
+ 	-webkit-transition: all 0.5s ease-in-out;
+ 	transition: all 0.5s ease-in-out;
 }
 .chevrons {
 	display: flex;
@@ -517,23 +523,11 @@ nav {
 	font-style: italic;
 	line-height: 25px;
 }
-.slide {
-	display: none;
-}
-.showing {
-	display: block;
-}
-.up {
-	order: 1;
-}
-.down {
-	order: 2;
-}
+
 /*-----------------------------------TEAM---------------------------------------------------------*/
 
 .team {
 	width: 100%;
-/*	height: 760px; */
 	background-color: #fff;
 }
 .team_wrapper {
@@ -612,6 +606,7 @@ nav {
 .team_show {
 	display: block;
 }
+
 /*----------------------------------CONTACT-------------------------------------------------------*/
 
 .contact {
@@ -686,7 +681,6 @@ textarea::placeholder {
 }
 .check {
 	align-self: center;
-/*	inline-flex; */
 }
 .check label {
 	cursor: pointer;	
@@ -723,12 +717,16 @@ footer {
 	display: flex;
 	justify-content: center;
 }
+#footer_menu ul li a:hover {
+	opacity: 0.5;
+	color: #fff;
+}
 .social {
 	margin-top: 34px;
 	display: flex;
 	justify-content: space-between;
 	opacity: 0.5;
-	color: #ffffff;
+	color: #fff;
 }
 .foot_about div {
 	display: inline-block;
@@ -749,7 +747,7 @@ footer {
 .foot_icons div {
 	display: inline-block;
 	opacity: 0.2;
-	color: #ffffff;
+	color: #fff;
 	font-family: "Font Awesome";
 	font-size: 20px;
 	font-weight: 400;
