@@ -5,7 +5,7 @@ var vh = window.innerHeight*0.01;
 var header = document.querySelector('header');
 header.style.setProperty('--vh', vh + 'px');
 
-window.addEventListener('scroll' ,function(){
+window.addEventListener('scroll', function(){
 	window.removeEventListener('resize', hendlerResize);
 //	debounce(window.addEventListener('resize', hendlerResize),2000);
 });
