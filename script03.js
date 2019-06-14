@@ -5,10 +5,17 @@ var vh = window.innerHeight*0.01;
 var header = document.querySelector('header');
 header.style.setProperty('--vh', vh + 'px');
 
-window.addEventListener('resize', function() {
+window.addEventListener('scroll' ,function(){
+	window.removeEventListener('resize');
+	debounce(window.addEventListener('resize', hendlerResize),2000);
+});
+
+function hendlerResize() {
 	var vh = window.innerHeight*0.01;
 	header.style.setProperty('--vh', vh + 'px');
-});
+}
+
+window.addEventListener('resize', hendlerResize);
 
 /*---------------------------LOAD VIDEO-----------------------------------------*/
 
@@ -51,7 +58,7 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 		function timeOut(el, calcHeight, callback) {
 
 			let pos = 0;
-			let id = setInterval(frame, 2);
+			let id = setInterval(frame, 1);
 			let height = calculateHeight(el);
 
 			function frame() {
@@ -60,20 +67,20 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 				callback();
 				return false;
 				} else {
-					pos+=2; 
+					pos+=3; 
 					el.style.height = calcHeight(height, pos);
 				};
 			}
 		}
 
 		function up(height, pos) {
-			this.height = height;
-			this.pos = pos;
-			return height-pos + 'px';
+			if (pos > height) return 0;
+			else return height-pos + 'px';
 		}
 
 		function down(height, pos) {
-			return pos + 'px';
+			if (pos > height) return height + 'px';
+			else return pos + 'px';
 		}
 				
 		function close() {
@@ -117,8 +124,6 @@ var next = document.getElementById('next');
 var previous = document.getElementById('previous');
 var currentSlide = 0;
 
-console.log(container);
-
 next.onmousedown = function(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -138,7 +143,6 @@ previous.onclick = function() {
     previousSlide();
 	return false;
 };
-console.log(boxes.length*230);
 
 function nextSlide(){
 	if (currentSlide > (boxes.length-2)*(-230)) {
