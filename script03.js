@@ -7,7 +7,7 @@ header.style.setProperty('--vh', vh + 'px');
 
 window.addEventListener('scroll' ,function(){
 	window.removeEventListener('resize');
-	debounce(window.addEventListener('resize', hendlerResize),2000);
+//	debounce(window.addEventListener('resize', hendlerResize),2000);
 });
 
 function hendlerResize() {
