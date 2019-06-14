@@ -1,4 +1,14 @@
 
+/*---------------------------MOBILE VH------------------------------------------*/
+
+var vh = window.innerHeight*0.01;
+document.header.style.setProperty('--vh', vh + 'px');
+
+window.addEventListener('resize', function() {
+	var vh = window.innerHeight*0.01;
+	document.header.style.setProperty('--vh', vh + 'px');
+});
+
 /*---------------------------LOAD VIDEO-----------------------------------------*/
 
 var elem = document.querySelector('#watch');

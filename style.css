@@ -36,6 +36,7 @@ header {
 	background-position: center;
 	background-size: cover;
 	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh)*100);
 	color: #fff;
 	display: flex; 
 	justify-content: center;
