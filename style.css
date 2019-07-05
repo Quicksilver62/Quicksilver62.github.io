@@ -38,7 +38,7 @@ header {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	min-height: 100vh;
+/*	min-height: 100vh; */
 	min-height: calc(var(--vh, 1vh)*100);
 	color: #fff;
 	display: flex; 
@@ -54,7 +54,7 @@ nav {
 	grid-template-areas: "logo menu sign";
 }
 header .wrapper nav {
-	padding-top: 50px 0 5vh 0;
+	padding: 50px 0 5vh 0;
 }
 .logo {
 	grid-area: logo;
@@ -974,6 +974,9 @@ footer .wrapper nav .menu ul li a {
 		grid-template-columns: 1fr;
 		grid-column-gap: 0;
 		grid-row-gap: 20px;
+	}
+	.form_inputs input {
+		width: calc(100% - 20px);
 	}
 	footer {
 		height: 100%;
