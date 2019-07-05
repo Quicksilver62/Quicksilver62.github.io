@@ -910,7 +910,7 @@ footer .wrapper nav .menu ul li a {
 		font-size: 35px;/* Приближение из-за подстановки шрифтов */
 	}
 	.buttons {
-		margin: 2vh auto;
+		margin: 2vh auto 10vh auto;
 	}
 	.button_buy input {
 		width: 120px;
