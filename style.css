@@ -54,7 +54,7 @@ nav {
 	grid-template-areas: "logo menu sign";
 }
 header .wrapper nav {
-	padding-top: 50px;
+	padding-top: 50px 0 5vh 0;
 }
 .logo {
 	grid-area: logo;
