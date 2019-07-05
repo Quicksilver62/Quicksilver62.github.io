@@ -770,6 +770,9 @@ footer {
 footer .wrapper nav {
 	grid-template-areas: "logo menu";
 }
+footer .wrapper nav .menu ul li a {
+	margin: 0 0 0 20px;
+}
 /* ----------------------------------MEDIA-------------------------------------------------------  */
 
  @media screen and (max-width: 1600px){
