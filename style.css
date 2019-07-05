@@ -648,13 +648,13 @@ header .wrapper nav {
 	grid-row-gap: 20px;
 }
 .form_inputs input {
-	width: 260px;
+	width: 240px;
 	height: 50px;
 	background: #fff;
 	outline: none;
 	border-radius: 5px;
 	border: 1px solid #061e37;
-	padding-left: 20px;
+	padding: 0 20px;
 	cursor: text;
 }
 .form_inputs input::placeholder {
@@ -662,10 +662,10 @@ header .wrapper nav {
 	font-family: Raleway;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 18px 0 18px 0;
+	padding: 18px 0;
 }
 textarea {
-	width: calc(100% - 20px);
+	width: calc(100% - 36px);
 	height: 150px;
 	resize: none;
 	background: #fff;
@@ -673,7 +673,7 @@ textarea {
 	border-radius: 5px;
 	border: 1px solid #061e37;
 	margin: 20px 0 20px 0;
-	padding: 18px 0 0 20px;
+	padding: 18px;
 }
 textarea::placeholder {
 	color: #061e37;
@@ -976,7 +976,7 @@ footer .wrapper nav .menu ul li a {
 		grid-row-gap: 20px;
 	}
 	.form_inputs input {
-		width: calc(100% - 20px);
+		width: calc(100% - 36px);
 	}
 	footer {
 		height: 100%;
