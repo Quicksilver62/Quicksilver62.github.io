@@ -2,8 +2,16 @@
 /*---------------------------MOBILE VH------------------------------------------*/
 
 var vh = window.innerHeight*0.01;
+//var fa = document.querySelectorAll('.fab');
 var header = document.querySelector('header');
 header.style.setProperty('--vh', vh + 'px');
+
+/*(function() {
+	if (window.innerWidth <= 700) {
+		Array.from(fa).forEach(function(item, i, fa) {
+			item.classList.add('fa-2x');
+	});
+}})(); */
 
 window.addEventListener('scroll', function(){
 	window.removeEventListener('resize', hendlerResize);
@@ -41,25 +49,14 @@ function handler() {
 /*---------------------------TOGGLE SERVICES-------------------------------------*/
 
 var panelItem = document.querySelectorAll('.drop_down'),
-  active = document.getElementsByClassName('panel-active');
+active = document.getElementsByClassName('panel-active');
 
-Array.from(panelItem).forEach(function(item, i, panelItem) {
-	item.addEventListener('onmousedown', function(e) {
-		preventDefault(e); 
-		stopPropagation(e);
-	return false;
-	}); 
-
-	item.addEventListener('click', function(e) {
-		
-		elem1 = this;
-		elem2 = active[0];
-
-		function timeOut(el, calcHeight, callback) {
+var elem1, elem2;
+  
+ 	function timeOut(el, height, calcHeight, callback) {
 
 			let pos = 0;
 			let id = setInterval(frame, 1);
-			let height = calculateHeight(el);
 
 			function frame() {
 				if (pos >= height) {
@@ -67,19 +64,19 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 				callback();
 				return false;
 				} else {
-					pos+=3; 
+					pos+=5; 
 					el.style.height = calcHeight(height, pos);
 				};
 			}
 		}
-
+		
 		function up(height, pos) {
-			if (pos > height) return 0;
+			if (pos >= height) return 0;
 			else return height-pos + 'px';
 		}
 
 		function down(height, pos) {
-			if (pos > height) return height + 'px';
+			if (pos >= height) return (height + 8) + 'px';
 			else return pos + 'px';
 		}
 				
@@ -92,24 +89,39 @@ Array.from(panelItem).forEach(function(item, i, panelItem) {
 		}
 		
 		function calculateHeight(e) {
+			let height;
 			if (window.innerWidth > 700) {
 				height = Math.max(e.firstElementChild.scrollHeight, e.lastElementChild.scrollHeight);	
 			}
 			else {
 				height = e.firstElementChild.scrollHeight + e.lastElementChild.scrollHeight;	
 			}
-			return height;
+			console.log(height);
+			return height;		
 		}
+
+Array.from(panelItem).forEach(function(item, i, panelItem) {
+	item.addEventListener('onmousedown', function(e) {
+		preventDefault(e); 
+		return false;
+	}); 
+	
+	item.addEventListener('click', function() {
 		
+		elem1 = this;
+		elem2 = active[0];
+
 		if (active.length > 0 && elem2.childNodes[3] !== elem1) { 	//если есть активный элемент, и это не тот по которому кликнули
-			timeOut(elem2.nextElementSibling, up, close);
+			let height = calculateHeight(elem2.nextElementSibling);
+			timeOut(elem2.nextElementSibling, height, up, close);
 		}
 		
+		let height = calculateHeight(elem1.parentNode.nextElementSibling);
 		if (elem1.parentNode.classList.contains('panel-active')) {
-				timeOut(elem1.parentNode.nextElementSibling, up, toggle);
+			timeOut(elem1.parentNode.nextElementSibling, height, up, toggle);
 			}
 		else {
-		timeOut(elem1.parentNode.nextElementSibling, down, toggle);
+			timeOut(elem1.parentNode.nextElementSibling, height, down, toggle);
 	}
 		
 	});
@@ -241,9 +253,16 @@ function removeTeamClasses(teamLeft, teamCenter, teamRight) {
 /*---------------------------BURGER MENU-------------------------------------*/
 
 var menu = document.querySelector('#bmenu');
+var list = menu.previousElementSibling;
 
-menu.onclick = function() {
-	this.previousElementSibling.classList.toggle('responsive');
-};
+function toggleResponsive() {
+	list.classList.toggle('responsive');
+}
+
+menu.addEventListener('click', function() {
+	let height = list.scrollHeight + 32;
+	if (list.classList.contains('responsive'))	timeOut(list, height, up, toggleResponsive);
+	else timeOut(list, height, down, toggleResponsive);
+});
 
 
