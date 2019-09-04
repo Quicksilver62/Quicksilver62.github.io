@@ -64,7 +64,7 @@ var elem1, elem2;
 				callback();
 				return false;
 				} else {
-					pos+=5; 
+					pos+=2; 
 					el.style.height = calcHeight(height, pos);
 				};
 			}
@@ -76,7 +76,7 @@ var elem1, elem2;
 		}
 
 		function down(height, pos) {
-			if (pos >= height) return (height + 4) + 'px';
+			if (pos >= height) return (height + 8) + 'px';
 			else return pos + 'px';
 		}
 				
