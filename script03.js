@@ -64,7 +64,7 @@ var elem1, elem2;
 				callback();
 				return false;
 				} else {
-					pos+=2; 
+					pos+=4; 
 					el.style.height = calcHeight(height, pos);
 				};
 			}
