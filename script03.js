@@ -76,7 +76,7 @@ var elem1, elem2;
 		}
 
 		function down(height, pos) {
-			if (pos >= height) return (height + 8) + 'px';
+			if (pos >= height) return (height + 4) + 'px';
 			else return pos + 'px';
 		}
 				
