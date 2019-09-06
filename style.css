@@ -16,7 +16,10 @@ a {
 li {
 	list-style: none;
 }
-
+p {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
 /*-------------------------------BUTTONS---------------------------------------------------*/
 
 .butt input {
@@ -35,30 +38,33 @@ header {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	min-height: 100vh;
+/*	min-height: 100vh; */
+	min-height: calc(var(--vh, 1vh)*100);
 	color: #fff;
 	display: flex; 
 	justify-content: center;
 }
 .wrapper {
-	width: 80%;
+	width: 90%;
 	display: grid;
 	grid-template-rows: auto 1fr;
 }
 nav {
-	margin: 50px 0 20px 0; 
 	display: grid;
-	grid-template-areas: "logo menu sign"
+	grid-template-areas: "logo menu sign";
+}
+header .wrapper nav {
+	padding: 50px 0 5vh 0;
 }
 .logo {
 	grid-area: logo;
 	display: flex;
 	align-self: flex-end;
 }
-.icon {
+/*.icon {
 	grid-area: icon;
 	display: none;
-}
+} */
 .menu {
 	grid-area: menu;
 	display: flex;
@@ -107,7 +113,9 @@ nav {
 	color:  rgba(6, 30, 55, 1);
 	font-weight: 600;
 }
-
+#menu__toggle {
+	 opacity: 0;
+}
 .wrapper1 {
 	display: flex;
 	justify-content: space-between;
@@ -141,7 +149,7 @@ nav {
 }
 .button_buy input {
 	background-color:  #061e37;
-	width: 150px;
+	width: 160px;
 	height: 55px;
 	color: #fff;
 	border: 1px solid #061e37;
@@ -181,7 +189,7 @@ nav {
 .video_overlay {
 	width: 100%;
 	height: 100%;
-	background: url("img/videoOverlay.png") no-repeat;
+	background: url("img/Rounded Rectangle 2 copy.png") no-repeat;
     -moz-background-size: 100% 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100% 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100% 100%; /* Opera 9.6+ */
@@ -250,7 +258,7 @@ nav {
 	font-weight: 400;
 	line-height: 25px;/* Приближение из-за подстановки шрифтов */
 	text-align: center;
-	width: 555px;
+	max-width: 555px;
 	margin: 20px auto;
 }
 .title {
@@ -337,11 +345,39 @@ nav {
 	position: relative;
 }
  .inner_counts {
+	box-sizing: border-box;
+	padding-left: 50px;
+	width: 200px;
 	display: inline-block;
 	position: absolute;
 	top: 33%;
 }
-
+ .count_item::before {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	content: '';
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+ }
+ .count1::before {
+	 content: url(img/business.png);
+ }
+  .count2::before {
+	 content: url(img/file_download.png);
+ }
+  .count3::before {
+	 content: url(img/person.png);
+ }
+  .count4::before {
+	 content: url(img/file_download_1.png);
+ }
 /*-----------------------------------SERVICES-----------------------------------------------------*/
 
 .services {
@@ -396,9 +432,9 @@ nav {
 	margin-top: 22px;
 }
 .serv_inner {
-	margin: 0 25px 0 25px;
+	margin: 0 25px;
 	height: 0;
-	overflow: hidden;
+	overflow: hidden; 
 	display: flex;
 }
 .serv_img {
@@ -534,6 +570,7 @@ nav {
 	width: 645px;
 	height: 100%;
 	margin: 0 auto;
+	padding-bottom: 20px; 
 }
 #team_p3 {
 	margin-top: 30px;
@@ -599,6 +636,8 @@ nav {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 90px;
+	font-family: "Font Awesome";
+	font-size: 20px;
 }
 .team_social div a i {
 	color: #90a4ae;
@@ -621,7 +660,6 @@ nav {
 .contact_wrapper .p1 {
 	color: #061e37;
 	font-family: "Raleway - Semi Bold";
-	font-size: 45px;
 	font-weight: 400;
 	margin: 0 auto;
 	padding-top: 50px;
@@ -641,13 +679,13 @@ nav {
 	grid-row-gap: 20px;
 }
 .form_inputs input {
-	width: 260px;
+	width: 240px;
 	height: 50px;
 	background: #fff;
 	outline: none;
 	border-radius: 5px;
 	border: 1px solid #061e37;
-	padding-left: 20px;
+	padding: 0 20px;
 	cursor: text;
 }
 .form_inputs input::placeholder {
@@ -655,10 +693,10 @@ nav {
 	font-family: Raleway;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 18px 0 18px 0;
+	padding: 18px 0;
 }
 textarea {
-	width: calc(100% - 20px);
+	width: calc(100% - 36px);
 	height: 150px;
 	resize: none;
 	background: #fff;
@@ -666,7 +704,7 @@ textarea {
 	border-radius: 5px;
 	border: 1px solid #061e37;
 	margin: 20px 0 20px 0;
-	padding: 18px 0 0 20px;
+	padding: 18px;
 }
 textarea::placeholder {
 	color: #061e37;
@@ -717,6 +755,9 @@ footer {
 	display: flex;
 	justify-content: center;
 }
+#footer_menu {
+	justify-self: flex-end; 
+}
 #footer_menu ul li a:hover {
 	opacity: 0.5;
 	color: #fff;
@@ -756,6 +797,12 @@ footer {
 }
 .foot_icons div:hover {
 		opacity: 1;
+}
+footer .wrapper nav {
+	grid-template-areas: "logo menu";
+}
+footer .wrapper nav .menu ul li a {
+	margin: 0 0 0 20px;
 }
 /* ----------------------------------MEDIA-------------------------------------------------------  */
 
@@ -828,61 +875,147 @@ footer {
 	nav {
 		display: grid;
 		grid-template-areas: 
-						"logo icon"
-						"responsive responsive";
+						"logo btn"
+						"menu menu";
 		grid-template-columns: 180px 1fr;
 		grid-template-rows: 1fr auto; 
-		padding-bottom: 0;
+		margin-bottom: 0;
 	}
-	.icon {
+/*	.icon {
 		display: flex;
 		justify-content: flex-end;
 	}	
 	.icon a {
 		margin: 0;
-	}
+	} */
 	.menu {
-		display: none;
+		grid-area: menu;
+	}
+	.menu__btn {
+		grid-area: btn;
+		display: flex;
+		align-items: center; 
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		position: relative;
+		position: absolute;
+		top: 50px;
+		right: 10%;
+		z-index: 10;
+	}
+	.menu__btn > span,
+	.menu__btn > span::before,
+	.menu__btn > span::after {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 4px;
+		background-color: #fff;
+	}
+	.menu__btn > span::before {
+		content: '';
+		top: 10px;
+	}
+	.menu__btn > span::after {
+		content: '';
+		top: -10px;
 	}
 	.sign {
 		display: none;
 	}
-	.responsive {
-		grid-area: responsive;
-		display: flex;
-		justify-content: flex-end;
-		overflow-y: hidden;
-	} 
-	.responsive ul {
-		margin-top: 20px;
+	.menu__box {
+		margin: 20px 0; 
 		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
+		align-items: flex-end; 
+		visibility: hidden;
+		position: fixed;
+		top: 70px;
+		right: -100%;
+		background-color: #03b6be;
+		z-index: 2;
 	}
-	.responsive ul li {
-		margin: 0;
+	.menu__box li {
+		width: 100%;
+	}
+	.menu__box li:first-child {
+		margin-top: 100px;
+	}
+	.menu__item {
+		box-sizing: border-box;
+		margin-top: 3vh;
+		padding: 3vh 5%;
 		width: 100%;
 		text-align: right;
+		font-size: 3vh;
 	}
-	.responsive ul li a {
-		width: 100%;
-		margin: 20px 0 0 0;
+	.menu ul li a:hover {
+		color: #fff;
+		font-weight: 400;
+		background-color: rgba(6, 30, 55, 0.9);
 	} 
+	#menu__toggle:checked ~ .menu__btn {
+		position: fixed;
+	}
+	#menu__toggle:checked ~ .menu__btn > span {
+		transform: rotate(45deg);
+	}
+	#menu__toggle:checked ~ .menu__btn > span::before {
+	  top: 0;
+	  transform: rotate(0);
+	}
+	#menu__toggle:checked ~ .menu__btn > span::after {
+	  top: 0;
+	  transform: rotate(90deg);
+	}
+	#menu__toggle:checked ~ .menu__box {
+	  visibility: visible;
+	  right: 0;
+	  top: -20px;
+	}
 	.serv_wrapper {
 		width: 80%;
+	}
+	#footer_menu {
+		display: none;
 	}
 }
 
 @media screen and (max-width: 700px) {
 
+	.wrapper {
+		width: 90%;
+	}
 	header .wrapper .wrapper1 .about {
-		margin: 0;
+		margin: 0 auto;
 	} 
-	.responsive ul:last-child{
-		margin-bottom: 40px;
-	} 
-	.p3 {
+	.menu__btn {
+		right: 5%;
+	}
+	.about h1 {
+		font-size: 40px;/* Приближение из-за подстановки шрифтов */
+	}
+	.about h2 {
+		font-size: 38px;/* Приближение из-за подстановки шрифтов */
+	}
+	.p1 {
+		font-size: 35px;/* Приближение из-за подстановки шрифтов */
+	}
+	.buttons {
+		margin: 2vh auto 10vh auto;
+	}
+	.button_buy input {
+		width: 120px;
+	}
+	.button_try input {
+		margin-left: 10vw;
+		width: 120px;
+	}
+	.easy_and_useful {
+		margin: 0 auto;
 		width: 90%;
 	}
 	.counts {
@@ -897,11 +1030,14 @@ footer {
 		flex-direction: column;
 	}
 	.serv_inner p {
-		margin: 8px 0 0 0;
+		margin: 8px 0; 
 	}
 	.team_wrapper {
 		width: 90%;
 	} 
+	.testimonials_container {
+		grid-template-columns: 70px 1fr;
+	}
 	.avatars {
 		width: 90%;
 		grid-template-columns: 1fr;
@@ -921,7 +1057,6 @@ footer {
 	.social {
 		flex-direction: column;
 	}
-	
 	.contact {
 	height: 100%;
 	padding-bottom: 50px;
@@ -936,14 +1071,11 @@ footer {
 		grid-row-gap: 20px;
 	}
 	.form_inputs input {
-		width: calc(100% - 18px);
+		width: calc(100% - 36px);
 	}
 	footer {
 		height: 100%;
 		padding-bottom: 10vw;
-	}
-	#footer_menu {
-		display: none;
 	}
 	.foot_about {
 		margin-bottom: 5vw;

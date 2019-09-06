@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!-- Отображать страницу в масштабе 100% -->
-	<meta name="viewport" content="width=device-width, initial-scale=.8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Dart Service Manager</title>
 	
@@ -17,10 +17,10 @@
 	<!--________FONTAWESOME_________________________________________________________________________________-->
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css">
+	<link rel="stylesheet" href="fontawesome-free-5.9.0-web\css\all.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
 
-	<link rel="shortcut icon" type="image/x-icon" href="img/Shape2.png" sizes="16x16"> 
+	<link rel="shortcut icon" type="image/x-icon" href="img/target_1.png" sizes="16x16"> 
 </head>
 <body>
 
@@ -87,16 +87,19 @@
 					<div class="logo_text"><p><b>dart<br>service manager</b></p></div>
 				</div>
 				<div class="menu" id="header_menu">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Service</a></li>
-						<li><a href="#">Extension</a></li>
-						<li><a href="#">Pricing</a></li>
-						<li><a href="#">Help</a></li>
-					</ul>
-					
+					<input id="menu__toggle" type="checkbox" />
+					<label class="menu__btn" for="menu__toggle">
+					  <span></span>
+					</label>
+					<ul class="menu__box">
+						<li><a class="menu__item" href="#">Home</a></li>
+						<li><a class="menu__item" href="#">Service</a></li>
+						<li><a class="menu__item" href="#">Extension</a></li>
+						<li><a class="menu__item" href="#">Pricing</a></li>
+						<li><a class="menu__item" href="#">Help</a></li>
+					</ul>			
 				</div>
-				<div class="icon" id="bmenu"><a href="#"><i class="fas fa-bars fa-2x"></i></a></div>
+<!--				<div class="icon" id="bmenu"><a href="#"><i class="fas fa-bars fa-2x"></i></a></div> -->
 				<div class="sign"><input type="button" value="sign up"></div>
 			</nav>
 			<div class="wrapper1">
@@ -156,22 +159,22 @@
 	<div class="counts">
 		<div id="business">
 			<div class="inner_counts">
-				<p>12000*<br>Business</p>
+				<p class="count_item count1">12000*<br>Business</p>
 			</div>
 		</div>
 		<div id="downloads">
 			<div class="inner_counts">
-				<p>60000*<br>Downloads</p>
+				<p class="count_item count2">60000*<br>Downloads</p>
 			</div>
 		</div>
 		<div id="installs">
 			<div class="inner_counts">
-				<p>30000*<br>Free Installs</p>
+				<p class="count_item count3">30000*<br>Free Installs</p>
 			</div>
 		</div>
 		<div id="users">
 			<div class="inner_counts">
-				<p>40000*<br>Pro Users</p>
+				<p class="count_item count4">40000*<br>Pro Users</p>
 			</div>
 		</div>
 	</div>
@@ -196,7 +199,7 @@
 					<div class="serv_img">
 						<img width="250" height="155" src="img/Rounded_Rectangle_53.png" alt="">
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</div>
 			</div>
 			<div class="box">
@@ -278,9 +281,9 @@
 				<div class="about">
 					<h2>What our customers have to say about us</h2>
 					<p class="p_testimonials">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quibusdam mollitia ratione earum adipisci velit.</p>
-					<div class="buttons">
+			<!--		<div class="buttons"> -->
 						<div class = "butt button_buy"><input type="button" value="get started"></div>
-					</div> 
+			<!--		</div> -->
 				</div>
 				<div class="testimonials_area">
 					<div class="chevrons_outer">
@@ -424,7 +427,8 @@
 		<div class="wrapper">
 			<nav>
 				<div class="logo">
-					<div class="logo_img"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					<div class="logo_img">
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							 width="30px" height="30px" viewBox="0 0 953 953" style="enable-background:new 0 0 953 953;" xml:space="preserve" fill="#fff">
 						<g>
 							<g>
@@ -475,7 +479,8 @@
 						</g>
 						<g>
 						</g>
-						</svg></div>
+						</svg>
+					</div>
 					<div class="logo_text"><p><b>dart<br>service manager</b></p></div>
 				</div>
 				<div class="menu" id="footer_menu">
