@@ -458,6 +458,7 @@ header .wrapper nav {
 }
 .panel-active .drop_down {
 	transform: rotate(180deg);
+	transition: transform .3s linear;
 }
 
 /*--------------------------------TESTIMONIALS----------------------------------------------------*/
