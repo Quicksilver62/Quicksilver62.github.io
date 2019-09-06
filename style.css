@@ -902,7 +902,7 @@ footer .wrapper nav .menu ul li a {
 		position: absolute;
 		top: 50px;
 		right: 10%;
-		z-index: 10;
+		z-index: 100;
 	}
 	.menu__btn > span,
 	.menu__btn > span::before,
@@ -937,7 +937,7 @@ footer .wrapper nav .menu ul li a {
 		top: 70px;
 		right: -100%;
 		background-color: #03b6be;
-		z-index: 2;
+		z-index: 99;
 		transition-duration: .25s;
 	}
 	.menu__box li {
